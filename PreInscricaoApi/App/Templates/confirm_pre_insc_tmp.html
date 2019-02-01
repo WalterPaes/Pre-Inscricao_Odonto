@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Email de Confirmação de Pré-Inscrição</title>
+    <style>
+        body{
+            width: 100%;
+        }
+        td{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="2">
+                        <img src="https://seeklogo.com/images/S/sesc-logo-BBF0E029DE-seeklogo.com.png" alt="sesc-logo" height="100" width="150">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>
+                            <strong>Sua Pré-Inscrição foi Efetuada com Sucesso!</strong><br>
+                            Verifique se seus dados estão corretos.
+                        </p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>
+                            NOME:
+                        </strong>
+                    </td>
+                    <td>
+                        {{ NOME }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            IDADE:
+                        </strong>
+                    </td>
+                    <td>
+                        {{ IDADE }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            MATRÍCULA:
+                        </strong>
+                    </td>
+                    <td>
+                        {{ MATRICULA }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            TELEFONE:
+                        </strong>
+                    </td>
+                    <td>
+                        {{ TELEFONE }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            EMAIL:
+                        </strong>
+                    </td>
+                    <td>
+                        {{ EMAIL }}
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <p>
+                            <strong style="color: red;">ATENÇÃO:</strong> Este email é apenar um comprovante de Pré-Inscrição. Ele <b>NÃO</b> garante sua vaga.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>A lista dos contemplados será divulgada no endereço <a href="http://sesc-pa.com.br" target="_blank">sesc-pa.com.br</a> até segundo dia útil após a Pré-Inscrição.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>
+                            -- <br/>
+                            Atenciosamente, <br/>
+                            Equipe Clínica Odontológica Sesc/PA.
+                        </p>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>
