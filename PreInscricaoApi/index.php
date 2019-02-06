@@ -19,10 +19,8 @@ $app = new Slim\App($config);
 // Rota responsável por verificar o Período
 $app->get('/periodo', function (){
     try {
-
         $periodo = new Periodo();
         return $periodo->verificaPeriodo();
-
     } catch (Exception $ex) {
         return ResponseJson::response([
             "status" => $ex->getCode(),
