@@ -1,0 +1,702 @@
+<template>
+    <div class="page" data-name="form-inscricao">
+        <div class="navbar">
+            <div class="navbar-inner sliding">
+            <div class="left">
+                <a href="#" class="link back">
+                <i class="icon icon-back"></i>
+                <span class="ios-only">Back</span>
+                </a>
+            </div>
+            <div class="title">Formulário de Pré-Inscrição</div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="block"  id="form-area">
+                <div class="text-align-center">
+                    <h2>UNIDADE {{ unidades[0].unidade_nome }}</h2>
+                </div>
+                <form class="block block-strong" id="idFormInsc">
+                    <div class="row">
+                        <div class="col-100 text-align-center">
+                            <h3>DADOS PESSOAIS</h3>
+                        </div>
+                        <div class="col-100 tablet-100 desktop-50 list no-hairlines-md">
+                            <ul>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">NOME <span class="text-color-red">*</span> :</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" name="nome" placeholder="Informe seu conforme a carteirinha" required validate>
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-100 tablet-30 desktop-20 list no-hairlines-md">
+                            <ul>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">IDADE <span class="text-color-red">*</span> :</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" name="idade" id="idIdade" placeholder="Ex.: 5" maxlength="3" required validate pattern="[0-9]*" data-error-message="Insira Somente Números!">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-100 tablet-70 desktop-30 list no-hairlines-md">
+                            <ul>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">MATRÍCULA DO SESC <span class="text-color-red">*</span> :</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" name="matricula" placeholder="Ex.: 00101234567" maxlength="11" required validate pattern="[0-9]*" data-error-message="Insira Somente Números!">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-100 tablet-100 desktop-50 list no-hairlines-md">
+                            <ul>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">CATEGORIA <span class="text-color-red">*</span> :</div>
+                                        <div class="item-input-wrap input-dropdown-wrap">
+                                            <select name="categoria" required validate>
+                                                <option value="">Selecione...</option>
+                                                <option value="1">Trabalhador do Comércio</option>
+                                                <option value="2">Dependente</option>
+                                                <option value="3">Conveniado</option>
+                                                <option value="4">Usuário</option>
+                                                <option value="5">GSI</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-100 tablet-30 desktop-20 list no-hairlines-md">
+                            <ul>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">TELEFONE <span class="text-color-red">*</span> :</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" name="telefone" placeholder="Ex.: 91988765521" maxlength="11" required validate pattern="[0-9]*" data-error-message="Insira Somente Números!">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-100 tablet-70 desktop-30 list no-hairlines-md">
+                            <ul>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">EMAIL:</div>
+                                        <div class="item-input-wrap">
+                                            <input type="email" name="email" placeholder="Ex.: seuemail@email.com" required validate>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-100 text-align-center">
+                            <h3>QUESTIONÁRIO</h3>
+                        </div>
+                    </div>
+                    <div class="block block-strong inset">
+                        <div class="row text-align-left">
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">1. Quando foi a última vez que você compareceu ao consultório odontológico?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[1][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Nunca fui ao consultório odontológico
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[1][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Mais de 2 anos
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[1][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    De 1 a 2 anos
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[1][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Há menos de 1 ano
+                                </div>
+                            </div>
+
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">2. Você concluiu o último tratamento odontológico?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[2][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Nunca fiz tratamento odontológico
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[2][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não lembro
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[2][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não conclui
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[2][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim, conclui
+                                </div>
+                            </div>
+
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">3. Onde foi seu último tratamento odontológico?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[3][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Nunca fiz tratamento odontológico
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[3][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    No Sesc
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[3][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    No serviço público
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[3][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Em consultório particular
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row text-align-left">
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">4. Você sente dor de dente?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[4][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim, constantemente
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[4][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim, às vezes
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[4][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Somente quando me alimento
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[4][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não
+                                </div>
+                            </div>
+
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">5. Você tem algum dente cariado?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[5][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim, vários
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[5][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim, poucos
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[5][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não sei
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[5][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não tenho
+                                </div>
+                            </div>
+
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">6. Sua gengiva sangra?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[6][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim, espontaneamente
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[6][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim, quando escovo os dentes ou uso fio dental
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[6][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Raramente
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[6][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não sangra
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row text-align-left">
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">7. Com qual frequência você escova os dentes?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[7][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Uma vez ao dia
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[7][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Duas vezes ao dia
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[7][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Três vezes ao dia
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[7][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Após todas as refeições e antes de dormir
+                                </div>
+                            </div>
+
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">8. Você usa fio dental?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[8][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não, acho que não é necessário
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[8][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não, porque não sei a técnica
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[8][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Às vezes
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[8][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Uso todos os dias
+                                </div>
+                            </div>
+
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">9. Você escova a língua?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[9][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não, pois não faz diferença
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[9][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não, pois sinto enjôo
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[9][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Às vezes
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[9][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim, todos os dias
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row text-align-left">
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">10. Como você avalia a sua saúde bucal?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[10][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Péssima
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[10][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Ruim
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[10][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Regular
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[10][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Boa
+                                </div>
+                            </div>
+
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">11. Você já extraiu algum dente?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[11][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim, e ainda preciso tirar outro(s)
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[11][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[11][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não Lembro
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[11][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não
+                                </div>
+                            </div>
+
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">12. Você usa prótese dentária(dentadura)?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[12][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não, mas acho que preciso
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[12][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim, mas preciso trocar
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[12][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não sei o que é
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[12][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não uso
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row text-align-left">
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">13. Você tem mau hálito?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[13][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sim
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[13][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Às vezes
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[13][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não sei
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[13][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Não
+                                </div>
+                            </div>
+
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">14. Por que você quer fazer tratamento odontológico?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[14][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Sanar minha dor de dente
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[14][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Tratar a minha gengiva
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[14][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Concluir tratamento odontológico
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[14][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Fazer uma revisão em minha saúde bucal
+                                </div>
+                            </div>
+
+                            <div class="col-100 tablet-100 desktop-33">
+                                <span class="question-title">15. Quem você acha que é o principal responsável pela manutenção de sua saúde bucal?</span>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[15][]" value="4" checked/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    Eu mesmo
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[15][]" value="3"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    O dentista e eu
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[15][]" value="2"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    O dentista
+                                </div>
+                                <div class="option-area">
+                                    <label class="radio">
+                                        <input type="radio" name="q[15][]" value="1"/>
+                                        <i class="icon-radio"></i>
+                                    </label>
+                                    O dentista e sua equipe de trabalho
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row text-align-left">
+                            <div class="col">
+                                <div class="option-area">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="idTermo" name="termo" value="1">
+                                        <i class="icon-checkbox"></i>
+                                    </label>
+                                    Estou ciente que o envio do formulário da pré-inscrição <strong>NÃO</strong> garante a vaga.
+                                    <div class="item-input-info" id="infoTermo"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row text-align-left">
+                            <div class="col">
+                                <input type="hidden" name="periodo" value="{{ periodo }}">
+                                <input type="hidden" name="unidade" id="idUnidade" value="{{ unidades[0].unidade_id }}">
+                                <button class="col button button-fill" id="btnEnviarForm">ENVIAR FORMULÁRIO</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+    return {
+        methods:
+        {
+            disableButton: function (state) {
+                $$("#btnEnviarForm").prop('disabled', state);
+                if ($$("#btnEnviarForm").prop('disabled')) {
+                    $$("#btnEnviarForm").addClass('color-gray');
+                } else {
+                    $$("#btnEnviarForm").removeClass('color-gray');
+                }
+            },
+            verificaIdade: function(unidade, idade) {
+                if (unidade === "1" && idade < 5) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        on: {
+            pageInit: function() {
+                var component = this;
+                component.disableButton(true);
+
+                // Habilitando e Desabilitando o botão conforme a checkbox
+                $$("#idTermo").on('change', function(){
+                    if ($$("#idTermo").prop('checked')) {
+                        component.disableButton(false);
+                    } else {
+                        component.disableButton(true);
+                    }
+                });
+                
+                // Enviando o Formulário
+                $$("#idFormInsc").on("submit", function(evt){
+                    evt.preventDefault();
+                    var formData = app.form.convertToData("#idFormInsc");
+
+                    if (component.verificaIdade($$('#idUnidade').val(), parseInt($$('#idIdade').val()))) {
+                        app.dialog.alert("Crianças menores de 5 anos não precisam realizar a pré-inscrição. Para elas existe a Oficina do Bebê. Obtenha mais informações na Clínica Odontológica SESC Doca!");
+                        $$('#idIdade').focus();
+                    } else {
+                        app.preloader.show();
+                        app.request.post(app.data.baseUrl + "/registrar", formData, function(data){
+                            var response = JSON.parse(data);
+                            
+                            if (response.status === 100) {
+                                app.dialog.alert(response.message);
+                                app.router.navigate('/inicial/', {reloadAll: true});
+                                
+                            } else {
+                                app.dialog.alert("Erro: " + response.status + "\n" + response.message);
+                            }
+
+                            app.preloader.hide();
+                        }), function(status){
+                            console.log(status)
+                        };
+                    }
+                });
+            }
+        }
+    }
+</script>

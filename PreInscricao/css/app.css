@@ -1,0 +1,46 @@
+/* Your app styles here */
+#content{
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p{
+    font-size: 12pt;
+}
+
+.block span{
+    font-size: 14pt;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.unidade-bg{
+    border: 1px solid black;
+}
+
+.card .card-header {
+    border: 1px solid #2196f3;
+}
+
+.demo-card-header-pic .card-header {
+    height: 17vw;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+hr{
+    color: red;
+}
+
+.question-title{
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.option-area{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12pt;
+}

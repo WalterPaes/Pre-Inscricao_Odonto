@@ -1,0 +1,41 @@
+<template>
+    <div class="page" data-name="unidades">
+        <div class="navbar">
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="ios-only">Back</span>
+                    </a>
+                </div>
+                <div class="title">Selecione sua Unidade</div>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="block">
+                <div class="row">
+                    {{#if unidades}}
+                        {{#each unidades}}
+                            <div class="col-100 tablet-100 desktop-50">
+                                <a href="/formulario/{{this.unidade_id}}/" class="card demo-card-header-pic elevation-10">
+                                    <div style="background-image:url({{this.unidade_foto}})" class="card-header align-items-flex-end"></div>
+                                    <div class="card-footer bg-color-red">
+                                        <span class="text-color-white">SESC {{this.unidade_nome}}</span>
+                                    </div>
+                                </a>
+                            </div>
+                        {{/each}}
+                    {{else}}
+                        <div class="col-100 tablet-100 desktop-50">
+                            <p>Não há Unidades disponíveis!</p>
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+    return {}
+</script>
